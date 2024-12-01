@@ -86,7 +86,7 @@ pub struct DL_EUI48_0 {
     pub Ei48: DL_EI48,
 }
 
-// Function pointers for the client characteristics
+/// Function pointers for the client characteristics
 pub type PNPI_CLIENT_ATTACH_PROVIDER_FN = Option<
     unsafe extern "C" fn(
         NmrBindingHandle: HANDLE,
@@ -124,7 +124,8 @@ pub struct _NPI_REGISTRATION_INSTANCE {
     pub NpiId: PNPIID,
     pub ModuleId: PNPI_MODULEID,
     pub Number: ULONG,
-    pub NpiSpecificCharacteristics: PVOID, // Assuming VOID is an alias for void
+    /// Assuming VOID is an alias for void
+    pub NpiSpecificCharacteristics: PVOID, 
 }
 
 pub type NPI_REGISTRATION_INSTANCE = _NPI_REGISTRATION_INSTANCE;
@@ -143,7 +144,7 @@ pub struct _NPI_CLIENT_CHARACTERISTICS {
 pub type NPI_CLIENT_CHARACTERISTICS = _NPI_CLIENT_CHARACTERISTICS;
 pub type PNPI_CLIENT_CHARACTERISTICS = *mut NPI_CLIENT_CHARACTERISTICS;
 
-// Function pointers for the provider characteristics
+/// Function pointers for the provider characteristics
 pub type PNPI_PROVIDER_ATTACH_CLIENT_FN = Option<
     unsafe extern "C" fn(
         NmrBindingHandle: HANDLE,
@@ -395,7 +396,7 @@ pub struct WSK_SOCKET {
     pub Dispatch: *const PVOID,
 }
 
-// Define a pointer type for WSK_SOCKET
+/// Define a pointer type for WSK_SOCKET
 pub type PWSK_SOCKET = *mut WSK_SOCKET;
 
 type PFN_WSK_CLOSE_SOCKET = extern "system" fn(Socket: PWSK_SOCKET, Irp: PIRP) -> NTSTATUS;

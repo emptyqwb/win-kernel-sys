@@ -1,6 +1,6 @@
 [package]
 name = "win-kernel-sys"
-version = "2.11.11"
+version = "2.11.13"
 authors = ["emptyqwb <you@example.com>"]
 edition = "2021"
 description = "windows-kernel-sys"
